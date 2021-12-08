@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/*
+ * 주의 할점 Entity 클래스를 Request/Response 클래스로 사용하지 말것
+ * Entity 클래스는 데이터베이스와 맞닿은 핵심 클래스
+ */
 @Getter
 @NoArgsConstructor
 @Entity
@@ -28,5 +32,10 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
