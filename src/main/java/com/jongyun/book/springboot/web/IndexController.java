@@ -1,7 +1,7 @@
 package com.jongyun.book.springboot.web;
 
+import com.jongyun.book.springboot.config.auth.LoginUser;
 import com.jongyun.book.springboot.config.auth.dto.SessionUser;
-import com.jongyun.book.springboot.domain.user.User;
 import com.jongyun.book.springboot.service.PostsService;
 import com.jongyun.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -19,9 +19,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        // annotation 으로 코드 중복 방지
+        // SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
