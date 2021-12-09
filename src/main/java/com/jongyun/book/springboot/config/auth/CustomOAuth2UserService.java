@@ -1,3 +1,5 @@
+package com.jongyun.book.springboot.config.auth;
+
 import com.jongyun.book.springboot.config.auth.dto.OAuthAttributes;
 import com.jongyun.book.springboot.config.auth.dto.SessionUser;
 import com.jongyun.book.springboot.domain.user.User;
