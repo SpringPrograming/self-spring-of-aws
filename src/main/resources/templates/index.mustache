@@ -4,7 +4,6 @@
     <title>Spring boot webservice</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 </head>
-
 <body>
     <h1>Web service starting with spring boot</h1>
     <div class="col-md-12">
@@ -29,7 +28,7 @@
             {{#posts}}
                 <tr>
                     <td>{{id}}</td>
-                    <td>{{title}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
